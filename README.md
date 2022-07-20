@@ -3,14 +3,13 @@
 
 Whatsapp api bot using Node Js - this bot get the bitcoin price from api and giving it as response into whatsapp back.
 
-#usage:
+# usage:
 npm install<br>
 npm run start
 
-#on Whatsapp:
+# on Whatsapp:<br>
 !sendprice
 
 
-
-#todo:
+# todo:
 * send message to other users

@@ -8,7 +8,7 @@ npm install<br>
 npm run start
 
 # On Whatsapp:<br>
-!sendprice
+!getprice
 
 
 # Todo:

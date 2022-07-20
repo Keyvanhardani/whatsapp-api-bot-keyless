@@ -12,4 +12,4 @@ npm run start
 
 
 # todo:
-* send message to other users
+send message to other users

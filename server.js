@@ -1,10 +1,13 @@
+/**
+ * Whatsapp Api Bot
+ * Author: Keyvan Hardani
+ * Version: 1.0.0
+ */
+
 const qrcode = require('qrcode-terminal');
-
 const { Client } = require('whatsapp-web.js');
-
 const client = new Client();
 const request = require('request');
-
 
 client.on('qr', (qr) => {
     // Generate and scan this code with your phone
@@ -15,7 +18,6 @@ client.on('qr', (qr) => {
 client.on('ready', () => {
     console.log('Client is ready!');
 });
-
 
 client.on('message', message => {
 	if(message.body === '!getprice') {

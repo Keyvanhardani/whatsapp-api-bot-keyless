@@ -32,23 +32,7 @@ client.on('message', message => {
         });
 		
         console.log(BTC());
-
-	}else if(message.body.startsWith('!sendto ')){
-
-        // const number = "+49171000000";
-        // Your message.
-        // const text = "Hey Key";
-        // Getting chatId from the number.
-        // we have to delete "+" from the beginning and add "@c.us" at the end of the number.
-        // const chatId = number.substring(1) + "@c.us";
-
-        let number = message.body.split(' ')[1];
-        let messageIndex = message.body.indexOf(number) + number.length;
-        let messagees = message.body.slice(messageIndex, message.body.length);
-        number = number.includes('@c.us') ? number : `${number}@c.us`;
-        // Sending message.
-        client.sendMessage(number, messagees);
-    }
+	}
 });
 
 client.initialize();

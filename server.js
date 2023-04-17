@@ -20,19 +20,27 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-	if(message.body === '!getprice') {
-        // send a request to blockchain
-        request('https://blockchain.info/de/ticker', (error, response, body) => {
+	
+        if(message.body === '!getprice') {
+            // send a request to blockchain
+            request('https://blockchain.info/de/ticker', (error, response, body) => {
 
-            // parse the json answer and get the current bitcoin value
-            const data = JSON.parse(body);
-            value = (parseInt(data.EUR.buy, 10) + parseInt(data.EUR.sell, 10)) / 2;
-            value = value.toFixed(2);
-            client.sendMessage(message.from, ''+value+'€');
+                // parse the json answer and get the current bitcoin value
+                const data = JSON.parse(body);
+                value = (parseInt(data.EUR.buy, 10) + parseInt(data.EUR.sell, 10)) / 2;
+                value = value.toFixed(2);
+                client.sendMessage(message.from, ''+value+'€');
+    });
+    
+    }    
+
+    if (message.body === '!gettel') {
+        client.sendMessage(message.from, 'Bitte gib die Telefonnummer des Empfängers ein:');
+        client.once('message', response => {
+          const receiverNumber = response.body.trim();
+          client.sendMessage(receiverNumber + '@c.us', 'Hallo Welt!');
         });
-		
-        console.log(BTC());
-	}
+      }
 });
 
 client.initialize();
